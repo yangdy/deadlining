@@ -1,3 +1,5 @@
+.idea
+
 *.rbc
 capybara-*.html
 .rspec
@@ -33,3 +35,4 @@ bower.json
 
 # Ignore pow environment settings
 .powenv
+
