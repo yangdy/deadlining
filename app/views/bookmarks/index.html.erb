@@ -1,0 +1,23 @@
+<h1>Deadlining - Bookmarks</h1>
+
+<table class="table table-hover">
+  <tr>
+    <th>标题</th>
+    <th>摘要</th>
+    <th>维护操作</th>
+  </tr>
+  <% @bookmarks.each do |bookmark| %>
+    <tr>
+      <td><a href="<%= bookmark.link %>"><%= bookmark.title %></a></td>
+      <td><%= bookmark.summary %></td>
+      <td>
+        <%= link_to "查看", bookmark_path(bookmark) %> |
+        <%= link_to "编辑", edit_bookmark_path(bookmark) %> |
+        <%= link_to "删除", bookmark_path(bookmark), method: :delete, data: {confirm: '确定要删除吗?'} %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<hr/>
+<a href="<%= new_bookmark_path %>">Favorites a link</a> | <a href="<%= root_path %>">Back to home</a>
